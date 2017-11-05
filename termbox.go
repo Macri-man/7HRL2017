@@ -120,12 +120,12 @@ func makeDisplay(w, h, numOfRooms int) Display {
 
 func (d *Display) setcontents() {
 	for _, r := range d.rooms {
-		for index := r.x; index < r.x+r.w; index++ {
-			d.SET(index, r.x, wall)
+		for index := r.y; index < r.y+r.w; index++ {
+			d.SET(index, r.y, wall)
 			d.SET(index, r.h-1, wall)
 		}
 
-		for index := r.y; index < r.y+r.h; index++ {
+		for index := r.x; index < r.x+r.h; index++ {
 			d.SET(r.y, index, wall)
 			d.SET(r.w-1, index, wall)
 		}
